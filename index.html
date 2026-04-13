@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Todo Card</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <article class="card" data-testid="test-todo-card">
+
+    <!-- Title -->
+    <h2 data-testid="test-todo-title" id="todo-title">
+      Build Todo Card
+    </h2>
+
+    <!-- Description -->
+    <p class="description" data-testid="test-todo-description">
+      Build a fully testable and accessible todo card using HTML, CSS and JavaScript.
+    </p>
+
+    <!-- Priority -->
+    <span
+    role="status"
+      class="badge priority-high"
+      data-testid="test-todo-priority"
+      aria-label="Priority: High"
+    >
+      High
+    </span>
+
+    <!-- Due Date -->
+    <time
+      id="due-date"
+      data-testid="test-todo-due-date"
+      class="meta"
+    >Loading due date...</time> <!--loading due date text...-->
+
+    <!-- Time Remaining -->
+    <time
+      id="time-remaining"
+      data-testid="test-todo-time-remaining"
+      class="meta"
+      aria-live="polite"
+    ></time>
+
+    <!-- Status -->
+    <span
+      id="status"
+      class="badge status"
+      data-testid="test-todo-status"
+      aria-label="Status: Pending"
+    >
+      Pending
+    </span>
+
+    <!-- Checkbox -->
+    <div class="checkbox-container">
+      <input
+        type="checkbox"
+        id="todo-checkbox"
+        data-testid="test-todo-complete-toggle"
+      />
+      <label for="todo-checkbox">Mark as complete</label>
+    </div>
+
+    <!-- Tags -->
+    <ul class="tags" role="list" data-testid="test-todo-tags">
+      <li class="tag" data-testid="test-todo-tag-work">work</li>
+      <li class="tag" data-testid="test-todo-tag-urgent">urgent</li>
+      <li class="tag">design</li>
+    </ul>
+
+    <!-- Buttons -->
+    <div class="actions">
+      <button
+        data-testid="test-todo-edit-button"
+        aria-label="Edit task"
+      >
+        Edit
+      </button>
+
+      <button
+        data-testid="test-todo-delete-button"
+        aria-label="Delete task"
+      >
+        Delete
+      </button>
+    </div>
+
+  </article>
+
+  <script src="script.js"></script>
+</body>
+</html>

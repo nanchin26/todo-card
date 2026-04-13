@@ -1,0 +1,95 @@
+body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .card {
+      max-width: 450px;
+      width: 100%;
+      margin: auto;
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    .description {
+      margin: 0;
+      color: #555;
+    }
+
+    .badge {
+      padding: 4px 8px;
+      border-radius: 6px;
+      color: white;
+      width: fit-content;
+      font-size: 0.8rem;
+    }
+
+    .priority-high {
+      background-color: #ff6b6b;
+    }
+
+    .status {
+      background-color: #4dabf7;
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .tag {
+      background: #eee;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:focus-visible {
+      outline: 2px solid #333;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 12px;
+      }
+    }
