@@ -164,44 +164,5 @@
 </html>
 
 <!--Editing Form still needs styling 
-  some transitions in styles.css are not working.
-  Some variables have El. what does that mean? e.g overdueEl.
-
-  Explain this exhaustively, line by line
-  function calculateTimeRemaining() {
-    const now = new Date();
-    const diff = dueDate - now;
-
-    const minutes = Math.floor(diff / (1000 * 60));
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-
-    if (diff < 0) {
-  const absDiff = Math.abs(diff);
-
-  const totalHours = Math.floor(absDiff / (1000 * 60 * 60));
-  const overdueDays = Math.floor(totalHours / 24);
-  const overdueHours = totalHours % 24;
-
-  if (overdueDays === 0) {
-    return `Overdue by ${overdueHours} hour${overdueHours !== 1 ? "s" : ""}`;
-  }
-
-  if (overdueHours === 0) {
-    return `Overdue by ${overdueDays} day${overdueDays !== 1 ? "s" : ""}`;
-  }
-
-  return `Overdue by ${overdueDays} day${overdueDays !== 1 ? "s" : ""}, ${overdueHours} hour${overdueHours !== 1 ? "s" : ""}`;
-}
-
-    if (minutes <= 1) return "Due now!";
-    if (hours < 24) return `Due in ${hours} hour${hours !== 1 ? "s" : ""}`;
-    if (days === 1) return "Due tomorrow";
-
-    return `Due in ${days} days`;
-  }
-
-  function updateTimeRemaining() {
-    timeRemainingEl.textContent = calculateTimeRemaining();
-  }
+  some transitions in styles.css are not working
 -->

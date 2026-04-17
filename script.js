@@ -186,7 +186,6 @@ editDateInput.value = dueDate.toISOString().slice(0,16);
     
     priorityEl.dataset.priority = selectedPriority;
     priorityEl.textContent = selectedPriority;
-    //priorityEl.setAttribute("aria-label", `Priority: ${selectedPriority}`);
 
     priorityEl.classList.remove("priority-low", "priority-medium", "priority-high");
     priorityEl.classList.add(`priority-${selectedPriority.toLowerCase()}`);
@@ -225,7 +224,6 @@ dueDate = new Date(editDateInput.value);
       timeRemainingEl.style.display = "block";
       dueDateEl.style.opacity = "0.5";
     } else {
-      //timeRemainingEl.style.display = "block";
       dueDateEl.style.opacity = "1";
     }
       }
