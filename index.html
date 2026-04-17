@@ -13,13 +13,70 @@
 
     <!-- Title -->
     <h2 data-testid="test-todo-title" id="todo-title">
-      Build Todo Card
+      <span id="title-text">Build Todo Card</span>
+      <span 
+    id="overdue-indicator"
+    data-testid="test-todo-overdue-indicator"
+    class="overdue-dot hidden"
+    aria-label="Overdue"
+    role="status"
+    >
+    </span>
     </h2>
 
     <!-- Description -->
+     <div data-testid="test-todo-collapsible-section" id="collapsible-section">
     <p class="description" data-testid="test-todo-description">
       Build a fully testable and accessible todo card using HTML, CSS and JavaScript.
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem tempora eum porro error in corporis laborum quasi sed, quidem nobis odit ullam, est illum culpa consequuntur. Beatae quis tempore hic.
     </p>
+  </div>
+    <button
+      id="expand-toggle"
+      data-testid="test-todo-expand-toggle"
+      aria-expanded="false"
+      aria-controls="collapsible-section">Show more</button>
+
+      <!--Editing Form-->
+
+    <div 
+      class="edit-form-css"
+      id="edit-form"
+      data-testid="test-todo-edit-form"
+      style="display: none;"
+      >
+      
+      <label for="edit-title">Title</label>
+      <input 
+        id="edit-title"
+        data-testid="test-todo-edit-title-input"
+        type="text">
+
+      <label 
+        for="edit-desc">Description</label>
+      <textarea
+        id="edit-desc"
+        data-testid="test-todo-edit-description-input"></textarea>
+
+        <label for="edit-priority">Priority</label>
+        <select 
+          id="edit-priority"
+          data-testid="test-todo-edit-priority-select">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+
+        <label for="edit-date">Due Date</label>
+        <input
+          id="edit-date"
+          type="datetime-local"
+          data-testid="test-todo-edit-due-date-input">
+        <div class="form-actions">
+        <button data-testid="test-todo-save-button">Save</button>
+        <button data-testid="test-todo-cancel-button">Cancel</button>
+        </div>
+    </div>
 
     <!-- Priority -->
     <span
@@ -27,6 +84,7 @@
       class="badge priority-high"
       data-testid="test-todo-priority"
       aria-label="Priority: High"
+      data-priority="High"
     >
       High
     </span>
@@ -47,6 +105,7 @@
     ></time>
 
     <!-- Status -->
+
     <span
       id="status"
       class="badge status"
@@ -54,8 +113,16 @@
       aria-label="Status: Pending"
     >
       Pending
-    </span>
+  </span>
 
+    <label class="status-message" for="status-control">Status: </label>
+    <select class="status-control-css" id="status-control"
+      data-testid="test-todo-status-control">
+      <option value="Pending">Pending</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Done">Done</option>
+    </select>
+    
     <!-- Checkbox -->
     <div class="checkbox-container">
       <input
@@ -95,3 +162,46 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+<!--Editing Form still needs styling 
+  some transitions in styles.css are not working.
+  Some variables have El. what does that mean? e.g overdueEl.
+
+  Explain this exhaustively, line by line
+  function calculateTimeRemaining() {
+    const now = new Date();
+    const diff = dueDate - now;
+
+    const minutes = Math.floor(diff / (1000 * 60));
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+    if (diff < 0) {
+  const absDiff = Math.abs(diff);
+
+  const totalHours = Math.floor(absDiff / (1000 * 60 * 60));
+  const overdueDays = Math.floor(totalHours / 24);
+  const overdueHours = totalHours % 24;
+
+  if (overdueDays === 0) {
+    return `Overdue by ${overdueHours} hour${overdueHours !== 1 ? "s" : ""}`;
+  }
+
+  if (overdueHours === 0) {
+    return `Overdue by ${overdueDays} day${overdueDays !== 1 ? "s" : ""}`;
+  }
+
+  return `Overdue by ${overdueDays} day${overdueDays !== 1 ? "s" : ""}, ${overdueHours} hour${overdueHours !== 1 ? "s" : ""}`;
+}
+
+    if (minutes <= 1) return "Due now!";
+    if (hours < 24) return `Due in ${hours} hour${hours !== 1 ? "s" : ""}`;
+    if (days === 1) return "Due tomorrow";
+
+    return `Due in ${days} days`;
+  }
+
+  function updateTimeRemaining() {
+    timeRemainingEl.textContent = calculateTimeRemaining();
+  }
+-->
